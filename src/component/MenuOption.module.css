@@ -1,0 +1,26 @@
+.menuItem {
+    text-align: left;
+    color: #0084CA;
+    margin-top: 17px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.menuItemActive {
+    text-decoration: underline;
+}
+
+.option {
+    text-align: left;
+    padding: 5px 5px 5px 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.activeOption {
+    text-align: left;
+    padding: 5px 5px 5px 10px;
+    background-image: url('../assets/svg/rectangle.svg');
+    background-size: 100%;
+
+}
