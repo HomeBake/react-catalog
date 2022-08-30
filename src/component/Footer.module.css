@@ -1,0 +1,37 @@
+.footer {
+    background: #1D252E;
+    display: flex;
+    justify-content: space-between;
+    max-height: 56px;
+
+}
+
+.socialMedia {
+
+}
+
+.media {
+    margin-left: 12px;
+}
+
+.phone {
+    color: #FFFFFF;
+    font-family: roboto, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    border-right: 1px solid #FFFFFF;
+    padding-right: 10px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 2%;
+    margin-top: 15px;
+    margin-bottom: 17px;
+}
+
+.lang {
+}
