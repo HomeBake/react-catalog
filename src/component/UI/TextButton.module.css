@@ -1,0 +1,16 @@
+.button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #2A3B45;
+    border: none;
+    background: none;
+}
+
+.button:hover {
+    color: #0084CA;
+}
+
+.button:disabled{
+    color: #7E7E7E;
+}

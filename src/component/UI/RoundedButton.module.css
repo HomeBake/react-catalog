@@ -1,0 +1,26 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 180px;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #0084CA;
+    color: #0084CA;
+    background: none;
+}
+
+
+.button:focus {
+    border: 2px solid #0084CA;
+}
+
+.button:disabled{
+    color: #ffffff;
+    background: #7E7E7E;
+}

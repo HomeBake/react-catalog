@@ -1,0 +1,23 @@
+.button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 40px;
+    border: 1px solid #CD9933;
+    height: 36px;
+    width: 195px;
+}
+
+.button:hover {
+    background: #CD9933;
+    color: #FFFFFF;
+}
+
+.button:focus {
+    border: 2px solid #CD9933;
+}
+
+.button:disabled{
+    color: #7E7E7E;
+    border: 1px solid #7E7E7E;
+}

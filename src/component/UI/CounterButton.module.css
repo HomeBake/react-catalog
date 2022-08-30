@@ -1,0 +1,24 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    border: 1px solid #0084CA;
+    border-radius: 4px;
+    width: 90px;
+    height: 41px;
+    cursor: default;
+    user-select: none;
+
+}
+
+.buttonChange {
+    font-weight: lighter;
+    font-size: 35px;
+    color: #0084CA;
+    width: 20px;
+    cursor: pointer;
+    user-select: none;
+}
