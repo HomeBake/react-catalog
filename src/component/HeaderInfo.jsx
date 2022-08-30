@@ -20,8 +20,9 @@ const HeaderInfo = () => {
                     {phone}
                 </div>
                 <div className={classes.socialMedia}>
-                    {socialMediaList.map((media)=> {
+                    {socialMediaList.map((media,key)=> {
                         return <SocialMedia
+                            key={key}
                             className={classes.media}
                             svg = {media.svg}
                             alt={media.alt}
