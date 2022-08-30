@@ -7,27 +7,26 @@ const Search = (props) => {
 
     const [value, setValue] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
+    const maxLength = props.maxLength || 25
 
     let inputWrapperClasses
     if (!errorMessage) {
         inputWrapperClasses = classes.inputWrapper
-    }
-    else {
+    } else {
         inputWrapperClasses = classes.inputWrapper + ' ' + classes.inputError
     }
     return (
         <div className={classes.search}>
-        <div className={inputWrapperClasses}>
+            <div className={inputWrapperClasses}>
                 <input
                     placeholder={props.placeholder}
                     className={classes.input}
                     value={value}
-                    onChange={ (event) => {
-                        if (event.target.value.length <= props.maxLength) {
+                    onChange={(event) => {
+                        if (event.target.value.length <= maxLength) {
                             setValue(event.target.value)
                             setErrorMessage('')
-                        }
-                        else {
+                        } else {
                             setErrorMessage('Слишком длинный запрос')
                         }
                     }}
@@ -35,12 +34,13 @@ const Search = (props) => {
                 {value ?
                     <img className={classes.eraser} src={eraserSvg} alt={'x'} onClick={() => {
                         setErrorMessage('')
-                        setValue('')}
+                        setValue('')
+                    }
                     }/>
                     :
                     <img className={classes.searchIcon} src={searchSvg} alt={'find'}/>
                 }
-        </div>
+            </div>
             <div className={classes.errorMessage}>{errorMessage}</div>
         </div>
 

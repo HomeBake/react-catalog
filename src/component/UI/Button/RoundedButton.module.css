@@ -11,13 +11,15 @@
     cursor: pointer;
     user-select: none;
     border: 1px solid #0084CA;
-    color: #0084CA;
-    background: none;
+    background: #0084CA;
 }
 
+.button:hover {
+    background:  #016DA6;
+}
 
 .button:focus {
-    border: 2px solid #0084CA;
+    border: 2px solid #016DA6;
 }
 
 .button:disabled{
