@@ -1,16 +1,30 @@
 .dropdown {
+    background: #1D252E;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #1D252E;
-    color: #FFFFFF;
     width: 61px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 700;
+    right: 30px;
+    top: 10px;
+
+
 }
 
 .dropDownItem {
+    background: #1D252E;
+    color: #FFFFFF;
+    padding-top: 6px;
+    padding-bottom: 7px;
+    width: 80%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.selected {
     padding-top: 6px;
     padding-bottom: 7px;
     width: 80%;
@@ -20,4 +34,8 @@
 
 .dropDownItem:hover {
     color: #7E7E7E;
+}
+
+.dropdown:hover {
+    box-shadow: 0 0 4px #FFFFFF;
 }
