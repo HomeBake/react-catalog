@@ -4,7 +4,9 @@ import styles from './OutlinedButton.module.css'
 const OutlinedButton = (props) => {
     return (
         <button {...props} className={styles.button}>
-            {props.children}
+            <div className={styles.buttonChildren}>
+                {props.children}
+            </div>
         </button>
     );
 };

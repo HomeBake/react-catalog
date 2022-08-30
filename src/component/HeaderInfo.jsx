@@ -3,13 +3,13 @@ import Select from "./UI/Select/Select";
 import {useState} from "react";
 import {socialMediaList} from '../utils/socialMediaList'
 import SocialMedia from "./SocialMedia";
-import classes from "./Footer.module.css";
+import classes from "./HeaderInfo.module.css";
 
 
 const phone = "+(373) 22 83-87-87"
 const menuItems = ['RU', 'ENG', 'MOL']
 
-const Footer = () => {
+const HeaderInfo = () => {
 
     const [selectedItem,setSelectedItem] = useState('ENG')
 
@@ -40,4 +40,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default HeaderInfo;

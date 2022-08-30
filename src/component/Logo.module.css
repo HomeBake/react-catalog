@@ -1,0 +1,18 @@
+.logo {
+
+}
+
+.topLogo {
+    font-family: roboto, sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.bottomLogo {
+    font-family: roboto, sans-serif;
+    font-size: 8px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 8px;
+    font-stretch: expanded;
+}
