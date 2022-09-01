@@ -11,8 +11,8 @@ const Header = () => {
         <div className={classes.headerWrapper}>
             <HeaderInfo/>
             <div className={classes.headerBottom}>
-                <img src={burgerSvg} alt={'Menu'}/>
-                <Logo/>
+                <img  src={burgerSvg} alt={'Menu'}/>
+                <div className={classes.logo}> <Logo /> </div>
                 <Button type={'outline'}> <img style={{marginRight: '10px'}} src={searchSvg}></img>  Прайс-лист</Button>
             </div>
         </div>

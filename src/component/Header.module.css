@@ -12,3 +12,9 @@
     align-items: center;
 }
 
+.logo {
+    position: absolute;
+    left: 40vw;
+    right: 40vw;
+}
+

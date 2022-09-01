@@ -81,6 +81,7 @@ export default class CategoryStore {
         this._categories = menu
         this._selectedCategory = 1
         this._selectedOption = 0
+        this._activeCat = 0
         makeAutoObservable(this)
     }
 
@@ -112,4 +113,14 @@ export default class CategoryStore {
             return category.id === id
         }).title
     }
+
+    get activeCat() {
+        return this._activeCat;
+    }
+
+    setActiveCat(value) {
+        this._activeCat = value;
+    }
+
+
 }
