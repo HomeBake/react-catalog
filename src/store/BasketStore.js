@@ -1,12 +1,8 @@
 import {makeAutoObservable} from "mobx";
 
-function sortByField(field) {
-    return (a, b) => a[field] > b[field] ? 1 : -1;
-}
-
 export default class BasketStore {
     constructor() {
-        this._basket = [] // [{id: 1, amount: 5, sum: 1400, type: 'Химчистка'}]
+        this._basket = [] // [{id: 1, amount: 5, sum: 1400}]
         this._basketAmount = 0
         this._basketPrice = 0
         makeAutoObservable(this)
@@ -16,25 +12,37 @@ export default class BasketStore {
         return this._basket;
     }
 
-    setBasket(id, num, sum, type) {
+    plusItem(id,sum) {
         let isExist = false;
         this._basket = this._basket.map((item)=>{
             if (item.id === id) {
                 isExist = true;
-                if (num === 0) {
-                    return {id: id, amount: null, sum: sum, type: type}
+                this.plusBasket(sum)
+                return {id: id, amount: item.amount + 1, sum: sum}
+            }
+            else return item
+        })
+        if (!isExist) {
+            this.plusBasket(sum)
+            this._basket = [...this._basket,{id: id, amount: 1, sum: sum}]
+        }
+    }
+
+    minusItem(id, sum) {
+        this._basket = this._basket.map((item)=>{
+            if (item.id === id) {
+                if (item.amount - 1 === 0) {
+                    this.minusBasket(sum)
+                    return {id: id, amount: null, sum: sum}
                 }
-                return {id: id, amount: num, sum: sum, type: type}
+                this.minusBasket(sum)
+                return {id: id, amount: item.amount - 1, sum: sum}
             }
             else return item
         })
         this._basket = this._basket.filter((item) => {
             return item.amount
         })
-        if (!isExist) {
-            this._basket = [...this._basket,{id: id, amount: 1, sum: sum, type: type}]
-        }
-        this._basket.sort(sortByField('type'))
     }
 
     get basketAmount() {
@@ -51,8 +59,25 @@ export default class BasketStore {
     }
 
     plusBasket(price) {
-        this._basketAmount = this.basketAmount + 1
+        this._basketAmount ++
         this._basketPrice += price
     }
 
+    getAmountById(id) {
+        console.log(id)
+        const item = this._basket.find((item) => {
+            return item.id === id
+        })
+        return item ? item.amount : null
+    }
+
+    deleteById(id) {
+        this._basket = this._basket.filter((item) => {
+            if (item.id === id) {
+                this._basketAmount -= item.amount
+                this._basketPrice -= (item.sum * item.amount)
+            }
+            return item.id !== id
+        })
+    }
 }

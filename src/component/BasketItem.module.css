@@ -1,0 +1,50 @@
+.item {
+
+    border-bottom: 1px solid #000000;
+    display: flex;
+    flex-direction: column;
+    padding: 7px 0 19px 0
+}
+
+.itemInfo {
+    display: flex;
+    margin-right: 12px;
+    text-align: start;
+
+}
+
+.itemTitle {
+    font-size: 10px;
+    min-width: 60%;
+}
+
+.itemPrice {
+    font-weight: 700;
+    font-size: 14px;
+    width: 100%;
+    text-align: end;
+}
+
+.itemButton {
+    display: flex;
+    width: 97%;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+.deleteItem {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.itemType {
+    text-align: start;
+    color: #0084CA;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 29px 0 12px 0;
+    border-bottom: 1px solid #000000;
+    width: 96%;
+}

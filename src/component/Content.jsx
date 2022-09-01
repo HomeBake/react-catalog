@@ -14,8 +14,8 @@ const description = "Из-за ежедневного использования
 const Content = observer(() => {
 
     const {itemStore, basketStore} = useContext(Context)
-    const itemInfo1 = itemStore.items
-    const basket = basketStore.basket.map((item) => {return item.amount})
+    const itemInfo = itemStore.items
+    const basket = basketStore.basket.map((item) => {return {amount: item.amount}})
     console.log(basket)
     return (
         <div className={classes.content}>
@@ -28,7 +28,7 @@ const Content = observer(() => {
                     {description}
                 </div>
                 <div className={classes.itemsList}>
-                    {itemInfo1.map((item) => {
+                    {itemInfo.map((item) => {
                         return <ItemCard
                             key={item.id}
                             item={item}

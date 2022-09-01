@@ -16,7 +16,7 @@ const Button = (props) => {
             button = <OutlinedButton {...props}> {props.children} </OutlinedButton>
             break
         case 'counter' :
-            button = <CounterButton {...props} count={props.count} onMinus={props.onMinus} onPlus={props.onPlus}/>
+            button = <CounterButton {...props} styles={props.styles} count={props.count} onMinus={props.onMinus} onPlus={props.onPlus}/>
             break
         case 'rounded' :
             button = <RoundedButton {...props}> {props.children} </RoundedButton>
