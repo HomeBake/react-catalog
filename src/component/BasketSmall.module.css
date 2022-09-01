@@ -1,0 +1,41 @@
+.basket {
+    display: flex;
+    flex-direction: row;
+}
+
+.infoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 28px 41px 0 83px;
+    width: 100%;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #0084CA;
+    margin-bottom: 19px;
+}
+
+.text {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.digits {
+    font-weight: 700;
+}
+
+.button {
+    margin: 12px 12px 0 0 ;
+}

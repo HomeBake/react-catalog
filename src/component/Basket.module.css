@@ -1,0 +1,14 @@
+.basket {
+    position: fixed;
+    bottom:  0;
+    right: 0;
+    background: #FFFFFF;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.15);
+    border-radius: 20px 0px 0px 0px;
+    height: 158px;
+    width: 520px;
+}
+
+.basketActive {
+    height: 100%;
+}
