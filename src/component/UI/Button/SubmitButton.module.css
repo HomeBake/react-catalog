@@ -18,7 +18,7 @@
     border: 3px solid #016DA6;
 }
 
-.button:disabled{
+.button:disabled {
     color: #ffffff;
     background: #7E7E7E;
 }

@@ -1,22 +1,22 @@
-import React from 'react';
-import HeaderInfo from "./HeaderInfo";
+import React from 'react'
+import HeaderInfo from './HeaderInfo'
 import burgerSvg from '../assets/svg/burger.svg'
 import searchSvg from '../assets/svg/search.svg'
-import Button from "./UI/Button/Button";
+import Button from './UI/Button/Button'
 import classes from './Header.module.css'
-import Logo from "./Logo";
+import Logo from './Logo'
 
 const Header = () => {
-    return (
-        <div className={classes.headerWrapper}>
-            <HeaderInfo/>
-            <div className={classes.headerBottom}>
-                <img  src={burgerSvg} alt={'Menu'}/>
-                <div className={classes.logo}> <Logo /> </div>
-                <Button type={'outline'}> <img style={{marginRight: '10px'}} src={searchSvg}></img>  Прайс-лист</Button>
-            </div>
-        </div>
-    );
-};
+	return (
+		<div className={classes.headerWrapper}>
+			<HeaderInfo/>
+			<div className={classes.headerBottom}>
+				<img src={burgerSvg} alt={'Menu'}/>
+				<div className={classes.logo}><Logo/></div>
+				<Button type={'outline'}> <img style={{marginRight: '10px'}} src={searchSvg}></img> Прайс-лист</Button>
+			</div>
+		</div>
+	)
+}
 
-export default Header;
+export default Header

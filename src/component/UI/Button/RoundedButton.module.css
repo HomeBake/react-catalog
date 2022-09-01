@@ -15,14 +15,14 @@
 }
 
 .button:hover {
-    background:  #016DA6;
+    background: #016DA6;
 }
 
 .button:focus {
     border: 2px solid #016DA6;
 }
 
-.button:disabled{
+.button:disabled {
     color: #ffffff;
     background: #7E7E7E;
 }

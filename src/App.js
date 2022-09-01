@@ -1,13 +1,13 @@
-import './App.css';
-import Store from "./pages/Store";
+import './App.css'
+import Store from './pages/Store'
 
 function App() {
 
-    return (
-        <div className="App">
-            <Store/>
-        </div>
-    );
+	return (
+		<div className="App">
+			<Store/>
+		</div>
+	)
 }
 
-export default App;
+export default App

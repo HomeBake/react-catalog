@@ -1,14 +1,14 @@
-import React from 'react';
-import Header from "../component/Header";
-import Content from "../component/Content";
+import React from 'react'
+import Header from '../component/Header'
+import Content from '../component/Content'
 
 const Store = () => {
-    return (
-        <>
-            <Header/>
-            <Content/>
-        </>
-    );
-};
+	return (
+		<>
+			<Header/>
+			<Content/>
+		</>
+	)
+}
 
-export default Store;
+export default Store
