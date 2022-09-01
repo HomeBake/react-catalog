@@ -13,9 +13,8 @@ const description = "Из-за ежедневного использования
 
 const Content = observer(() => {
 
-    const {itemStore, basketStore} = useContext(Context)
+    const {itemStore} = useContext(Context)
     const itemInfo = itemStore.items
-    const basket = basketStore.basket.map((item) => {return {amount: item.amount}})
     return (
         <div className={classes.content}>
              <SideBar/>
@@ -36,7 +35,7 @@ const Content = observer(() => {
                 </div>
 
             </div>
-            {basket.length !== 0 ? <Basket/> : ''}
+            <Basket/>
         </div>
 
     );

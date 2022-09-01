@@ -4,14 +4,13 @@ import {useState} from "react";
 import {socialMediaList} from '../utils/socialMediaList'
 import SocialMedia from "./SocialMedia";
 import classes from "./HeaderInfo.module.css";
+import SelectLang from "./SelectLang";
 
 
 const phone = "+(373) 22 83-87-87"
 const menuItems = ['RU', 'ENG', 'MOL']
 
 const HeaderInfo = () => {
-
-    const [selectedItem,setSelectedItem] = useState('ENG')
 
     return (
         <div className={classes.footer}>
@@ -31,12 +30,7 @@ const HeaderInfo = () => {
                     })}
                 </div>
             </div>
-            <Select
-                selectedItem={selectedItem}
-                menuItems={menuItems}
-                setSelectedItem={setSelectedItem}
-                className={classes.lang}
-            />
+            <SelectLang menu={menuItems}/>
         </div>
     );
 };
