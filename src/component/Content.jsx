@@ -16,7 +16,6 @@ const Content = observer(() => {
     const {itemStore, basketStore} = useContext(Context)
     const itemInfo = itemStore.items
     const basket = basketStore.basket.map((item) => {return {amount: item.amount}})
-    console.log(basket)
     return (
         <div className={classes.content}>
              <SideBar/>

@@ -64,7 +64,6 @@ export default class BasketStore {
     }
 
     getAmountById(id) {
-        console.log(id)
         const item = this._basket.find((item) => {
             return item.id === id
         })

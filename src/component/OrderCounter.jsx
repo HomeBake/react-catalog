@@ -12,7 +12,6 @@ const OrderCounter = observer(({item, styles}) => {
 
 
     function basketPlus() {
-        console.log(item.id)
         basketStore.plusItem(item.id, item.price)
 
     }
