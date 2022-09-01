@@ -1,14 +1,18 @@
 import React from 'react';
 import styles from "./CounterButton.module.css";
 
-const CounterButton = ({count, setCount}) => {
+const CounterButton = ({count, setOrderCount, onMinus, onPlus}) => {
 
     return (
         <div className={styles.button}>
             <div
                 className={styles.buttonChange}
                 onClick={ () => {
-                    count > 0 && setCount(count - 1)}}
+                    if (count > 0) {
+                    setOrderCount(count - 1)
+                    onMinus()
+                    }}
+            }
             >
                 -
             </div>
@@ -16,7 +20,9 @@ const CounterButton = ({count, setCount}) => {
             <div
                 className={styles.buttonChange}
                 onClick={ () => {
-                   setCount(count + 1)}}
+                    setOrderCount(count + 1)
+                    onPlus()
+                } }
             >
                 +
             </div>

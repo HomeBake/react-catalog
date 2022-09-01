@@ -1,25 +1,23 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import useToggle from "../hooks/useToggle";
 import MenuOption from "./MenuOption";
-import {useState} from "react";
 import classes from "./Menu.module.css";
+import {Context} from "./ContextProvider";
+import {observer} from "mobx-react";
 
-const Menu = ({menu, className}) => {
-    const [activeMenu, setActiveMenu] = useState(0)
-    const [activeOption, setActiveOption] = useState('')
+const Menu = observer(() => {
+    const {categoryStore} = useContext(Context)
+    const categories = categoryStore.categories
     return (
-        <div className={className + ' ' + classes.menu}>
-            {menu.map((item, key) => {
+        <div className={classes.menu}>
+            {categories.map((item, key) => {
                 return <MenuOption
                     key={key}
-                    activeMenu={activeMenu}
-                    setActiveMenu={setActiveMenu}
                     item={item}
-                    activeOption={activeOption}
-                    setActiveOption={setActiveOption}/>
+                />
             })}
         </div>
     );
-};
+});
 
 export default Menu;
