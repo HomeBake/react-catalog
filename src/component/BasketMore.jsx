@@ -6,13 +6,12 @@ import BasketItem from './BasketItem'
 import {observer} from 'mobx-react'
 
 
-const BasketMore = observer(({toggleActive}) => {
+const BasketMore = observer(() => {
 	const {itemStore, basketStore} = useContext(Context)
 	const basket = basketStore.basket
 	return (
-
 		<div className={classes.basketMore}>
-			<div className={classes.itemList}>
+			<div>
 				{basket.map((basketItem) => {
 					const item = itemStore.getById(basketItem.id)
 					return <BasketItem key={item.id} item={item} amount={basketItem.amount}/>
@@ -21,7 +20,6 @@ const BasketMore = observer(({toggleActive}) => {
 			<div className={classes.button}>
 				<Button> Оформить заказ </Button>
 			</div>
-			<div onClick={() => toggleActive()} className={classes.fade}></div>
 		</div>
 	)
 })

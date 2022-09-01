@@ -14,13 +14,15 @@ const Basket = observer(() => {
 		basketClass = classes.basketActive + ' ' + classes.basket
 	} else basketClass = classes.basket
 
-	const basket = basketStore.basket.length === 0 ? <></> :
-		<div className={basketClass}>
-			<BasketSmall isActive={isActive} toggleActive={toggleActive}/>
-			{isActive ? <BasketMore toggleActive={toggleActive}></BasketMore> : ''}
-		</div>
+	return basketStore.basket.length === 0 ? <></> :
+		<>
+			{isActive && <div onClick={() => toggleActive()} className={classes.fade}></div>}
+			<div className={basketClass}>
+				<BasketSmall isActive={isActive} toggleActive={toggleActive}/>
+				{isActive && <BasketMore toggleActive={toggleActive}/>}
+			</div>
+		</>
 
-	return basket
 
 })
 
