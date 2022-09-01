@@ -18,7 +18,7 @@ const BasketItem = ({item}) => {
                         {item.title}
                     </div>
                     <div className={classes.itemPrice}>
-                        {item.price * basketStore.getAmountById(item.id)}$
+                        {item.price * basketStore.getAmountById(item.id)}₽
                     </div>
                 </div>
                 <div className={classes.itemButton}>

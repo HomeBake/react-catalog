@@ -20,7 +20,7 @@ const MenuOption = observer(({category}) => {
                     categoryStore.setSelectedOption(0)
                 }
         }}>
-            {category.title} {activeMenu === category.id ? <img src={semiArrow} alt={"+"}/> : <img style={{transform: "rotate(180deg)"}} src={semiArrow} alt={"+"}/>}
+            {category.title} {activeMenu === category.id ? <img className={classes.arrow} src={semiArrow} alt={"+"}/> : <img className={classes.arrow} style={{transform: "rotate(180deg)",}} src={semiArrow} alt={"+"}/>}
         </div>
         {activeMenu ===  category.id &&
             category.options.map((option, key) => {

@@ -29,7 +29,7 @@ const Basket = ({isActive, toggleActive}) => {
                         Сумма заказа
                     </div>
                     <div className={classes.digits}>
-                        {basketStore.basketPrice}
+                        {basketStore.basketPrice}₽
                     </div>
                 </div>
             </div>

@@ -17,6 +17,10 @@
     cursor: pointer;
 }
 
+.arrow {
+    margin-left: 10px;
+}
+
 .activeOption {
     text-align: left;
     padding: 5px 5px 5px 10px;

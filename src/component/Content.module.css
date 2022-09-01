@@ -10,6 +10,7 @@
 .items {
     display: flex;
     flex-direction: column;
+    margin-left: 38px;
 }
 
 
@@ -23,6 +24,7 @@
 
 .description {
     margin-bottom: 66px;
+    text-align: start;
 }
 
 .itemsList {

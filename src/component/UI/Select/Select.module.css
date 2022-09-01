@@ -4,13 +4,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 61px;
+    min-width: 81px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 700;
     right: 30px;
     top: 10px;
-
 
 }
 

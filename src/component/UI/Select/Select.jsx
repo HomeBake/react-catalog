@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import classes from './Select.module.css'
 import useToggle from "../../../hooks/useToggle";
+import semiArrow from "../../../assets/svg/semiArrow.svg";
 
 const Select = ({selectedItem, setSelectedItem, menuItems, className}) => {
     const [isActive, toggleActive] = useToggle(false)
@@ -14,7 +15,7 @@ const Select = ({selectedItem, setSelectedItem, menuItems, className}) => {
             <div className={classes.dropDownItem} onClick={() => {
                 toggleActive()
             }}>
-                {selectedItem}
+                {selectedItem} {isActive ? <img className={classes.arrow} src={semiArrow} alt={"+"}/> : <img className={classes.arrow} style={{transform: "rotate(180deg)",}} src={semiArrow} alt={"+"}/>}
             </div>
             {
                 isActive && menuItems.map((item,key)=> {

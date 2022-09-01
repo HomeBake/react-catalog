@@ -13,7 +13,7 @@ const ItemCard = observer(({item}) => {
         <div className={classes.card}>
             <div className={classes.itemTitle}> {item.title}</div>
             <div className={classes.buySection}>
-                <div className={classes.price}> {item.price}$</div>
+                <div className={classes.price}> {item.price}₽</div>
                 <div className={classes.buyButton}>
                     <OrderCounter item={item}/>
                 </div>
