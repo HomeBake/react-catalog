@@ -16,8 +16,9 @@ const ItemCard = observer(({item}) => {
 					<OrderCounter item={item}/>
 				</div>
 			</div>
-			<Button type={'text'}>Подробнее <img style={{transform: 'rotate(90deg)', paddingLeft: '5px'}} src={arrow}
-												 alt={'->'}/></Button>
+			<Button type={'text'}>
+				Подробнее <img style={{transform: 'rotate(90deg)', paddingLeft: '5px'}} src={arrow} alt={'->'}/>
+			</Button>
 		</div>
 	)
 })

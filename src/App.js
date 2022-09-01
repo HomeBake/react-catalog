@@ -1,5 +1,6 @@
 import './App.css'
 import Store from './pages/Store'
+import React from 'react'
 
 function App() {
 

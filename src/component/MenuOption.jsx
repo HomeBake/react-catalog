@@ -10,17 +10,17 @@ const MenuOption = observer(({category}) => {
 	const activeOption = categoryStore.selectedOption
 	return <>
 		<div className={activeMenu === category.id ? classes.menuItemActive + ' ' + classes.menuItem : classes.menuItem}
-			 onClick={() => {
-				 if (activeMenu === category.id) {
-					 categoryStore.setActiveCat(0)
-				 } else {
-					 categoryStore.setSelectedCategory(category.id)
-					 categoryStore.setActiveCat(category.id)
-					 categoryStore.setSelectedOption(0)
-				 }
-			 }}>
+			onClick={() => {
+				if (activeMenu === category.id) {
+					categoryStore.setActiveCat(0)
+				} else {
+					categoryStore.setSelectedCategory(category.id)
+					categoryStore.setActiveCat(category.id)
+					categoryStore.setSelectedOption(0)
+				}
+			}}>
 			{category.title} {activeMenu === category.id ? <img className={classes.arrow} src={semiArrow} alt={'+'}/> :
-			<img className={classes.arrow} style={{transform: 'rotate(180deg)',}} src={semiArrow} alt={'+'}/>}
+				<img className={classes.arrow} style={{transform: 'rotate(180deg)',}} src={semiArrow} alt={'+'}/>}
 		</div>
 		{activeMenu === category.id &&
 			category.options.map((option, key) => {

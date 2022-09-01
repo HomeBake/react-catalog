@@ -6,7 +6,6 @@ import {Context} from './ContextProvider'
 
 const Basket = ({isActive, toggleActive}) => {
 	const {basketStore} = useContext(Context)
-	const basket = basketStore.basket
 	const img = isActive ?
 		<img style={{transform: 'rotate(180deg)'}} src={arrow} alt={' /| \n|'}/> :
 		<img src={arrow} alt={' /| \n|'}/>
