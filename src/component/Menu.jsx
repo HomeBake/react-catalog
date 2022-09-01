@@ -13,7 +13,7 @@ const Menu = observer(() => {
             {categories.map((item, key) => {
                 return <MenuOption
                     key={key}
-                    item={item}
+                    category={item}
                 />
             })}
         </div>

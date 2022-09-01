@@ -13,8 +13,8 @@ const description = "Из-за ежедневного использования
 
 const Content = observer(() => {
 
-    const {itemStore} = useContext(Context)
-    const itemInfo = itemStore.items
+    const {itemStore,categoryStore} = useContext(Context)
+    const itemInfo = itemStore.getByCategory(categoryStore.selectedCategory)
     return (
         <div className={classes.content}>
              <SideBar/>

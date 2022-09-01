@@ -4,24 +4,24 @@ import semiArrow from "../assets/svg/semiArrow.svg";
 import {Context} from "./ContextProvider";
 import {observer} from "mobx-react";
 
-const MenuOption = observer(({item}) => {
+const MenuOption = observer(({category}) => {
     const {categoryStore} = useContext(Context)
     const activeMenu = categoryStore.selectedCategory
     const activeOption = categoryStore.selectedOption
     return <>
-        <div className={ activeMenu === item.id ? classes.menuItemActive + ' ' +  classes.menuItem : classes.menuItem}
+        <div className={ activeMenu === category.id ? classes.menuItemActive + ' ' +  classes.menuItem : classes.menuItem}
              onClick={() => {
-                if (activeMenu === item.id) {
-                    categoryStore.setSelectedCategory(0)
+                if (activeMenu === category.id) {
+                    categoryStore.setSelectedCategory(1)
                 }
                 else {
-                    categoryStore.setSelectedCategory(item.id)
+                    categoryStore.setSelectedCategory(category.id)
                 }
         }}>
-            {item.title} {activeMenu === item.id ? <img src={semiArrow} alt={"+"}/> : <img style={{transform: "rotate(180deg)"}} src={semiArrow} alt={"+"}/>}
+            {category.title} {activeMenu === category.id ? <img src={semiArrow} alt={"+"}/> : <img style={{transform: "rotate(180deg)"}} src={semiArrow} alt={"+"}/>}
         </div>
-        {activeMenu ===  item.id &&
-            item.options.map((option, key) => {
+        {activeMenu ===  category.id &&
+            category.options.map((option, key) => {
                 return <div
                         key={key}
                         className={ activeOption === option.id ? classes.activeOption : classes.option}

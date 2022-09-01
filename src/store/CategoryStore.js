@@ -2,7 +2,7 @@ import {makeAutoObservable} from "mobx";
 
 const menu = [
     {
-        id: '1',
+        id: 1,
         title: 'Химчистка',
         options: [
             {id: 1, title: 'Аксессуары'},
@@ -14,7 +14,7 @@ const menu = [
         ]
     },
     {
-        id: '2',
+        id: 2,
         title: 'Аквачистка',
         options: [
             {id: 7, title: 'Пальто'},
@@ -26,7 +26,7 @@ const menu = [
         ]
     },
     {
-        id: '3',
+        id: 3,
         title: 'Ремонт одежды',
         options: [
             {id: 13, title: 'Аксессуары'},
@@ -38,7 +38,7 @@ const menu = [
         ]
     },
     {
-        id: '4',
+        id: 4,
         title: 'Химчистка',
         options: [
             {id: 19, title: 'Аксессуары'},
@@ -50,7 +50,7 @@ const menu = [
         ]
     },
     {
-        id: '5',
+        id: 5,
         title: 'Аквачистка',
         options: [
             {id: 25, title: 'Аксессуары'},
@@ -62,7 +62,7 @@ const menu = [
         ]
     },
     {
-        id: '6',
+        id: 6,
         title: 'Ремонт одежды',
         options: [
             {id: 31, title: 'Аксессуары'},
@@ -79,8 +79,8 @@ export default class CategoryStore {
 
     constructor() {
         this._categories = menu
-        this._selectedCategory = ''
-        this._selectedOption = ''
+        this._selectedCategory = 1
+        this._selectedOption = 0
         makeAutoObservable(this)
     }
 
@@ -105,5 +105,11 @@ export default class CategoryStore {
 
     setSelectedOption(value) {
         this._selectedOption = value;
+    }
+
+    getTitleById(id) {
+        return this._categories.find((category)=> {
+            return category.id === id
+        }).title
     }
 }

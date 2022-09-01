@@ -6,3 +6,11 @@
     margin-top: 60px;
 }
 
+.fade {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 520px;
+    background: rgba(0, 0, 0, 0.3);
+}

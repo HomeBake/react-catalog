@@ -5,10 +5,10 @@ import closeSvg from '../assets/svg/eraser.svg'
 import {Context} from "./ContextProvider";
 
 const BasketItem = ({item}) => {
-    const {basketStore} = useContext(Context)
+    const {basketStore, categoryStore} = useContext(Context)
     return (
         <>
-            <div className={classes.itemType}> {item.type} </div>
+            <div className={classes.itemType}> {categoryStore.getTitleById(item.type)} </div>
             <div className={classes.item}>
                 <div className={classes.deleteItem} onClick={() => {
                     basketStore.deleteById(item.id)

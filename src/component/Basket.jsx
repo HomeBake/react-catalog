@@ -18,7 +18,7 @@ const Basket = observer(() => {
     const basket = basketStore.basket.length === 0 ? <></> :
         <div className={basketClass}>
             <BasketSmall isActive={isActive} toggleActive={toggleActive}/>
-            {isActive ? <BasketMore></BasketMore> : ""}
+            {isActive ? <BasketMore toggleActive={toggleActive}></BasketMore> : ""}
         </div>
 
     return (
