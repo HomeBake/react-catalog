@@ -17,6 +17,7 @@ const MenuOption = observer(({category}) => {
                 else {
                     categoryStore.setSelectedCategory(category.id)
                     categoryStore.setActiveCat(category.id)
+                    categoryStore.setSelectedOption(0)
                 }
         }}>
             {category.title} {activeMenu === category.id ? <img src={semiArrow} alt={"+"}/> : <img style={{transform: "rotate(180deg)"}} src={semiArrow} alt={"+"}/>}
