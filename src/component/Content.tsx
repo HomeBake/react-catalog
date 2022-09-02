@@ -6,6 +6,7 @@ import SideBar from './SideBar'
 import {Context} from './ContextProvider'
 import {observer} from 'mobx-react'
 import Basket from './Basket'
+import Card from "./Card";
 
 
 const description = 'Из-за ежедневного использования повседневная одежда быстро изнашивается и нуждается в профессиональном уходе.' +
@@ -20,8 +21,7 @@ const Content = observer(() => {
 		itemStore.setItemSearch(search)
 		console.log(search)
 	}, [search])
-
-	const itemInfo = itemStore.getByCategoryAndSearch(categoryStore.selectedCategory)
+	const itemInfo = itemStore.getItemNyFilters(categoryStore.selectedCategory, categoryStore.selectedOption)
 	return (
 		<div className={classes.content}>
 			<SideBar/>
@@ -32,13 +32,17 @@ const Content = observer(() => {
 				<div className={classes.description}>
 					{description}
 				</div>
-				<div className={classes.itemsList}>
-					{itemInfo.map((item) => {
+				<div>
+					{itemInfo.length !== 0 ? itemInfo.map((item) => {
 						return <ItemCard
 							key={item.id}
 							item={item}
 						/>
-					})}
+					}) :
+					<Card>
+						<div className={classes.noItems}> Такого товара нет! </div>
+					</Card>
+					}
 				</div>
 
 			</div>
