@@ -1,10 +1,6 @@
 import {makeAutoObservable} from 'mobx'
+import {BasketItem} from "../types/basketType";
 
-interface BasketItem {
-	id: number
-	amount: number
-	sum: number
-}
 
 export default class BasketStore {
 	_basket: BasketItem[]

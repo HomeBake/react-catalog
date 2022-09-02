@@ -1,11 +1,6 @@
 import {makeAutoObservable} from 'mobx'
+import {Item} from "../types/itemType";
 
-interface Item {
-	id: number
-	title: string
-	price: number
-	type: number
-}
 
 const itemInfo = [
 	{id: 1, title: 'Пальто, полупальто с подстежкой из натурального меха', price: 1400, type: 1},

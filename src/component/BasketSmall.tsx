@@ -4,8 +4,13 @@ import Button from './UI/Button/Button'
 import arrow from '../assets/svg/arrow.svg'
 import {Context} from './ContextProvider'
 
-const Basket = ({isActive, toggleActive}) => {
-	const {basketStore} = useContext(Context)
+interface Props {
+	isActive: boolean
+	toggleActive: () => {}
+}
+
+const Basket = ({isActive, toggleActive}: Props) => {
+	const stores = useContext(Context)
 	const img = isActive ?
 		<img style={{transform: 'rotate(180deg)'}} src={arrow} alt={' /| \n|'}/> :
 		<img src={arrow} alt={' /| \n|'}/>
@@ -20,7 +25,7 @@ const Basket = ({isActive, toggleActive}) => {
 						Количество услуг в корзине
 					</div>
 					<div className={classes.digits}>
-						{basketStore.basketAmount}
+						{stores && stores.basketStore.basketAmount}
 					</div>
 				</div>
 				<div className={classes.text}>
@@ -28,7 +33,7 @@ const Basket = ({isActive, toggleActive}) => {
 						Сумма заказа
 					</div>
 					<div className={classes.digits}>
-						{basketStore.basketPrice}₽
+						{stores && stores.basketStore.basketPrice}₽
 					</div>
 				</div>
 			</div>

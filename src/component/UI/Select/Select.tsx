@@ -2,11 +2,11 @@ import React from 'react'
 import classes from './Select.module.css'
 import useToggle from '../../../hooks/useToggle'
 import semiArrow from '../../../assets/svg/semiArrow.svg'
-import {SocialMediaType} from "../../../utils/socialMediaList";
+
 
 interface Props {
 	selectedItem: string
-	setSelectedItem: (item: string) => {}
+	setSelectedItem:  React.Dispatch<React.SetStateAction<string>>
 	menuItems: string[]
 	className: string
 }

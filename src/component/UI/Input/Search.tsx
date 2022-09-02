@@ -3,7 +3,12 @@ import classes from './Search.module.css'
 import searchSvg from '../../../assets/svg/search.svg'
 import eraserSvg from '../../../assets/svg/eraser.svg'
 
-const Search = (props: { maxLength: number; placeholder: string | undefined }) => {
+interface Props {
+	maxLength?: number;
+	placeholder?: string
+}
+
+const Search = (props: Props) => {
 
 	const [value, setValue] = useState('')
 	const [errorMessage, setErrorMessage] = useState('')

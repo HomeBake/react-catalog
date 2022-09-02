@@ -1,13 +1,13 @@
-import {useState} from 'react'
-
-export default function useToggle(initialState) {
-	const [state, setState] = useState(initialState)
-
-	const toggle = () => {
-		setState(!state)
-	}
-
-	return [
-		state, toggle
-	]
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = require("react");
+function useToggle(initialState) {
+    var _a = (0, react_1.useState)(initialState), state = _a[0], setState = _a[1];
+    var toggle = function () {
+        setState(!state);
+    };
+    return [
+        state, toggle
+    ];
 }
+exports.default = useToggle;

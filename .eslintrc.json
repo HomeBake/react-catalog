@@ -13,10 +13,13 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    "parser": "@typescript-eslint/parser",
     "plugins": [
+        "@typescript-eslint",
         "react"
     ],
     "rules": {
+        "@typescript-eslint/rule-name": "error",
         "react/prop-types": 0,
         "indent": [
             "error",

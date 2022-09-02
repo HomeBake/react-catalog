@@ -1,10 +1,16 @@
-import React, {useContext} from 'react'
+import React, {CSSProperties, useContext} from 'react'
 import {Context} from './ContextProvider'
 import Button from './UI/Button/Button'
 import cartSvg from '../assets/svg/cart.svg'
 import {observer} from 'mobx-react'
+import {Item} from "../types/itemType";
 
-const OrderCounter = observer(({item, styles}) => {
+interface Props {
+	item: Item
+	styles?: CSSProperties
+}
+
+const OrderCounter = observer(({item, styles}: Props) => {
 	const {basketStore} = useContext(Context)
 
 	let orderCount = basketStore.getAmountById(item.id) || 0

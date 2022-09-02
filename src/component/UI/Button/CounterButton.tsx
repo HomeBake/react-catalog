@@ -3,9 +3,9 @@ import classes from './CounterButton.module.css'
 
 interface Props {
 	count: number
-	onMinus: () => {}
-	onPlus: () => {}
-	styles: CSSProperties | undefined
+	onMinus: () => void
+	onPlus: () => void
+	styles?: CSSProperties
 }
 
 const CounterButton = ({count, onMinus, onPlus, styles}: Props) => {

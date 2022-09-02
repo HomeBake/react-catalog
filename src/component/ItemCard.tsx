@@ -4,8 +4,13 @@ import Button from './UI/Button/Button'
 import arrow from '../assets/svg/arrow.svg'
 import {observer} from 'mobx-react'
 import OrderCounter from './OrderCounter'
+import {Item} from "../types/itemType";
 
-const ItemCard = observer(({item}) => {
+interface Props {
+	item: Item
+}
+
+const ItemCard = observer(({item}: Props) => {
 
 	return (
 		<div className={classes.card}>

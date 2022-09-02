@@ -13,7 +13,7 @@ const Header = () => {
 			<div className={classes.headerBottom}>
 				<img src={burgerSvg} alt={'Menu'}/>
 				<div className={classes.logo}><Logo/></div>
-				<Button types={'outline'}> <img style={{marginRight: '10px'}} src={searchSvg}></img> Прайс-лист</Button>
+				<Button types={'outline'}> <img style={{marginRight: '10px'}} src={searchSvg} alt={'/0'}></img> Прайс-лист</Button>
 			</div>
 		</div>
 	)
