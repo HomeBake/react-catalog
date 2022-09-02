@@ -6,11 +6,11 @@ import eraserSvg from '../../../assets/svg/eraser.svg'
 interface Props {
 	maxLength?: number;
 	placeholder?: string
+	value: string
+	setValue:  React.Dispatch<React.SetStateAction<string>>
 }
 
 const Search = (props: Props) => {
-
-	const [value, setValue] = useState('')
 	const [errorMessage, setErrorMessage] = useState('')
 	const maxLength = props.maxLength || 25
 
@@ -26,20 +26,20 @@ const Search = (props: Props) => {
 				<input
 					placeholder={props.placeholder}
 					className={classes.input}
-					value={value}
+					value={props.value}
 					onChange={(event) => {
 						if (event.target.value.length <= maxLength) {
-							setValue(event.target.value)
+							props.setValue(event.target.value)
 							setErrorMessage('')
 						} else {
 							setErrorMessage('Слишком длинный запрос')
 						}
 					}}
 				/>
-				{value ?
+				{props.value ?
 					<img className={classes.eraser} src={eraserSvg} alt={'x'} onClick={() => {
 						setErrorMessage('')
-						setValue('')
+						props.setValue('')
 					}
 					}/>
 					:

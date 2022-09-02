@@ -19,10 +19,19 @@ const itemInfo = [
 export default class ItemStore {
 
 	_itemInfo: Item[]
+	_itemSearch: string
 
 	constructor() {
 		this._itemInfo = itemInfo
+		this._itemSearch = '' // Better do store for search
 		makeAutoObservable(this)
+	}
+	get itemSearch(): string {
+		return this._itemSearch;
+	}
+
+	setItemSearch(value: string) {
+		this._itemSearch = value;
 	}
 
 	get items() {
@@ -36,6 +45,12 @@ export default class ItemStore {
 	getByCategory(categoryId: number) {
 		return this._itemInfo.filter((item) => {
 			return item.type === categoryId
+		})
+	}
+
+	getByCategoryAndSearch(categoryId: number) {
+		return this._itemInfo.filter((item) => {
+			return (item.type === categoryId && item.title.includes(this._itemSearch))
 		})
 	}
 

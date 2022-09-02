@@ -16,8 +16,19 @@ var itemInfo = [
 var ItemStore = /** @class */ (function () {
     function ItemStore() {
         this._itemInfo = itemInfo;
+        this._itemSearch = ''; // Better do store for search
         (0, mobx_1.makeAutoObservable)(this);
     }
+    Object.defineProperty(ItemStore.prototype, "itemSearch", {
+        get: function () {
+            return this._itemSearch;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    ItemStore.prototype.setItemSearch = function (value) {
+        this._itemSearch = value;
+    };
     Object.defineProperty(ItemStore.prototype, "items", {
         get: function () {
             return this._itemInfo;
@@ -31,6 +42,12 @@ var ItemStore = /** @class */ (function () {
     ItemStore.prototype.getByCategory = function (categoryId) {
         return this._itemInfo.filter(function (item) {
             return item.type === categoryId;
+        });
+    };
+    ItemStore.prototype.getByCategoryAndSearch = function (categoryId) {
+        var _this = this;
+        return this._itemInfo.filter(function (item) {
+            return (item.type === categoryId && item.title.includes(_this._itemSearch));
         });
     };
     ItemStore.prototype.getById = function (id) {
