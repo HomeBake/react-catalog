@@ -1,2 +1,2 @@
 # react-catalog
-https://homebake.github.io
+https://homebake.github.io/react-catalog/
